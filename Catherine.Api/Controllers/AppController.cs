@@ -1,5 +1,4 @@
 using System.Net;
-using Catherine.Api.Models.ApiResponse;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catherine.Api.Controllers
@@ -8,6 +7,11 @@ namespace Catherine.Api.Controllers
     [ApiController]
     public class AppController : ControllerBase
     {
+        protected IActionResult ApiOk()
+        {
+            return ApiOk(HttpStatusCode.OK, null);
+        }
+
         protected IActionResult ApiOk(object data)
         {
             return ApiOk(HttpStatusCode.OK, data);
@@ -15,7 +19,7 @@ namespace Catherine.Api.Controllers
 
         protected IActionResult ApiOk(HttpStatusCode code, object data)
         {
-            return Ok(ApiResponse.Ok(code, data));
+            return Ok(Catherine.Api.ApiResponse.ApiResponse.Ok(code, data));
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catherine.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190810094526_Initialize")]
+    [Migration("20190810162813_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,32 @@ namespace Catherine.Api.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CountryId = 1L,
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(3728),
+                            IsCapital = false,
+                            Name = "Zagreb"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CountryId = 1L,
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(4241),
+                            IsCapital = false,
+                            Name = "Karlovac"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CountryId = 3L,
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(4249),
+                            IsCapital = false,
+                            Name = "Berlin"
+                        });
                 });
 
             modelBuilder.Entity("Catherine.Model.Citizens.Citizen", b =>
@@ -85,7 +111,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 1L,
                             Birthdate = new DateTime(1879, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 147, DateTimeKind.Utc).AddTicks(7251),
                             FirstName = "Albert",
                             LastName = "Einstein",
                             Paycheck = 15000.00m,
@@ -95,7 +121,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 2L,
                             Birthdate = new DateTime(1858, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 148, DateTimeKind.Utc).AddTicks(2532),
                             FirstName = "Max",
                             LastName = "Planck",
                             Paycheck = 14000.00m,
@@ -105,7 +131,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 3L,
                             Birthdate = new DateTime(1995, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 148, DateTimeKind.Utc).AddTicks(2574),
                             FirstName = "Pero",
                             LastName = "Peric",
                             Paycheck = 16000.00m,
@@ -134,19 +160,19 @@ namespace Catherine.Api.Migrations
                         {
                             CitizenId = 1L,
                             CountryId = 3L,
-                            ValidFrom = new DateTime(2019, 8, 10, 9, 45, 26, 375, DateTimeKind.Utc).AddTicks(2068)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(301)
                         },
                         new
                         {
                             CitizenId = 2L,
                             CountryId = 3L,
-                            ValidFrom = new DateTime(2019, 8, 10, 9, 45, 26, 375, DateTimeKind.Utc).AddTicks(2587)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(807)
                         },
                         new
                         {
                             CitizenId = 3L,
                             CountryId = 1L,
-                            ValidFrom = new DateTime(2019, 8, 10, 9, 45, 26, 375, DateTimeKind.Utc).AddTicks(2595)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(816)
                         });
                 });
 
@@ -181,19 +207,19 @@ namespace Catherine.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7649),
                             Name = "Croatia"
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7969),
                             Name = "USA"
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7974),
                             Name = "Germany"
                         });
                 });

@@ -1,27 +1,42 @@
-using System.Linq;
 using System.Threading.Tasks;
-using Catherine.Model.DbContext;
+using Catherine.Api.Requests;
+using Catherine.Api.Responses;
+using Catherine.Api.Services.Contracts;
+using Catherine.Model.Countries;
+using Catherine.Shared.Pagination;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Catherine.Api.Controllers
 {
     public class CountriesController : AppController
     {
-        private readonly AppDbContext _context;
+        private readonly ICountryService Countries;
 
         public CountriesController(
-            AppDbContext context
+            ICountryService countries
         ) {
-            _context = context;
+            Countries = countries;
         }
 
-        // [HttpGet("pagination")]
         [HttpGet]
-        public async Task<IActionResult> GetPage()
+        public async Task<IActionResult> GetPage([FromQuery] CountryPaginationRequest request = null)
         {
-            var countries = await _context.Countries.ToListAsync();
-            return ApiOk(countries);
+            PagedResult<CountryResponse> pagedResult = await Countries.GetPageAsync(request);
+            return ApiOk(pagedResult);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOne(long id)
+        {
+            var country = await Countries.GetByIdAsync(id);
+            return ApiOk(country);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(long id)
+        {
+            int success = await Countries.DeleteByIdAsync(id);
+            return ApiOk(success);
         }
     }
 }

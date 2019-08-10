@@ -1,4 +1,4 @@
-namespace Catherine.Api.Models.ApiResponse
+namespace Catherine.Api.ApiResponse
 {
     public class ApiErrorInformation
     {

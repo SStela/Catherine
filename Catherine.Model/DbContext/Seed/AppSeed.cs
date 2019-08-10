@@ -1,4 +1,5 @@
 using System;
+using Catherine.Model.Cities;
 using Catherine.Model.Citizens;
 using Catherine.Model.Citizenships;
 using Catherine.Model.Countries;
@@ -13,6 +14,7 @@ namespace Catherine.Model.DbContext.Seed
             Citizens(modelBuilder);
             Countries(modelBuilder);
             Citizenships(modelBuilder);
+            Cities(modelBuilder);
         }
 
         public static void Citizenships(ModelBuilder modelBuilder)
@@ -53,6 +55,30 @@ namespace Catherine.Model.DbContext.Seed
                 {
                     Id = 3,
                     Name = "Germany"
+                }
+            );
+        }
+
+        public static void Cities(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<City>().HasData(
+                new City()
+                {
+                    Id = 1,
+                    Name = "Zagreb",
+                    CountryId = 1
+                },
+                new City()
+                {
+                    Id = 2,
+                    Name = "Karlovac",
+                    CountryId = 1
+                },
+                new City()
+                {
+                    Id = 3,
+                    Name = "Berlin",
+                    CountryId = 3
                 }
             );
         }
