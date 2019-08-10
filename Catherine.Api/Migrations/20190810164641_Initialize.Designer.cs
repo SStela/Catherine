@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catherine.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190810162813_Initialize")]
+    [Migration("20190810164641_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 1L,
                             CountryId = 1L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(3728),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 656, DateTimeKind.Utc).AddTicks(104),
                             IsCapital = false,
                             Name = "Zagreb"
                         },
@@ -58,7 +58,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 2L,
                             CountryId = 1L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(4241),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 656, DateTimeKind.Utc).AddTicks(641),
                             IsCapital = false,
                             Name = "Karlovac"
                         },
@@ -66,7 +66,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 3L,
                             CountryId = 3L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(4249),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 656, DateTimeKind.Utc).AddTicks(648),
                             IsCapital = false,
                             Name = "Berlin"
                         });
@@ -111,7 +111,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 1L,
                             Birthdate = new DateTime(1879, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 147, DateTimeKind.Utc).AddTicks(7251),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 652, DateTimeKind.Utc).AddTicks(2989),
                             FirstName = "Albert",
                             LastName = "Einstein",
                             Paycheck = 15000.00m,
@@ -121,7 +121,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 2L,
                             Birthdate = new DateTime(1858, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 148, DateTimeKind.Utc).AddTicks(2532),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 653, DateTimeKind.Utc).AddTicks(835),
                             FirstName = "Max",
                             LastName = "Planck",
                             Paycheck = 14000.00m,
@@ -131,7 +131,7 @@ namespace Catherine.Api.Migrations
                         {
                             Id = 3L,
                             Birthdate = new DateTime(1995, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 148, DateTimeKind.Utc).AddTicks(2574),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 653, DateTimeKind.Utc).AddTicks(884),
                             FirstName = "Pero",
                             LastName = "Peric",
                             Paycheck = 16000.00m,
@@ -160,19 +160,19 @@ namespace Catherine.Api.Migrations
                         {
                             CitizenId = 1L,
                             CountryId = 3L,
-                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(301)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(5550)
                         },
                         new
                         {
                             CitizenId = 2L,
                             CountryId = 3L,
-                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(807)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(6088)
                         },
                         new
                         {
                             CitizenId = 3L,
                             CountryId = 1L,
-                            ValidFrom = new DateTime(2019, 8, 10, 16, 28, 13, 150, DateTimeKind.Utc).AddTicks(816)
+                            ValidFrom = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(6095)
                         });
                 });
 
@@ -207,19 +207,19 @@ namespace Catherine.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7649),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(2437),
                             Name = "Croatia"
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7969),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(2862),
                             Name = "USA"
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2019, 8, 10, 16, 28, 13, 149, DateTimeKind.Utc).AddTicks(7974),
+                            CreatedAt = new DateTime(2019, 8, 10, 16, 46, 40, 655, DateTimeKind.Utc).AddTicks(2867),
                             Name = "Germany"
                         });
                 });

@@ -59,9 +59,7 @@ namespace Catherine.Api.Services
             
             _context.Countries.Remove(country);
             return await _context.SaveChangesAsync();
-        }
-
-        
+        }        
 
     }
 }

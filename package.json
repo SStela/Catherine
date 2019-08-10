@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "dotnet run --project Catherine.Api",
     "web": "",
-    "db:refresh": "dotnet ef database update 0 --project Catherine.Api && dotnet ef database update --project Catherine.Api"
+    "db:refresh": "dotnet ef database update 0 --project Catherine.Api && dotnet ef database update --project Catherine.Api",
+    "db:commit": "dotnet ef migrations add --project Catherine.Api"
   },
   "author": "",
   "license": "ISC",
