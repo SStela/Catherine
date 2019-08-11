@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Catherine.Api.Extensions;
 using Catherine.Api.Services;
 using Catherine.Api.Services.Contracts;
 using Catherine.Model.DbContext;
@@ -33,16 +34,7 @@ namespace Catherine.Api
         {
 
             services.AddTransient<ICountryService, CountryService>();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("MyAllowSpecificOrigins",
-                builder =>
-                {
-                    builder.WithOrigins("http://localhost:4200")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-                });
-            });
+            services.AddApiCors();
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Catherine.Api")));

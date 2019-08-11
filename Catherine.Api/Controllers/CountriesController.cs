@@ -13,9 +13,8 @@ namespace Catherine.Api.Controllers
         private readonly ICountryService Countries;
 
         public CountriesController(
-            IMapper mapper,
             ICountryService countries
-        ) : base(mapper) {
+        ) {
             Countries = countries;
         }
 
