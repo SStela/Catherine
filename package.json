@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel api",
+    "start": "npm-run-all --parallel api web",
     "test": "echo \"Error: no test specified\" && exit 1",
     "api": "dotnet run --project Catherine.Api",
-    "web": "",
+    "api:watch": "dotnet watch --project Catherine.Api run",
+    "web": "cd Catherine.Web && npm start",
     "db:refresh": "dotnet ef database update 0 --project Catherine.Api && dotnet ef database update --project Catherine.Api",
     "db:commit": "dotnet ef migrations add --project Catherine.Api"
   },

@@ -1,4 +1,5 @@
 using System.Net;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catherine.Api.Controllers
@@ -7,6 +8,13 @@ namespace Catherine.Api.Controllers
     [ApiController]
     public class AppController : ControllerBase
     {
+        protected readonly IMapper _mapper;
+
+        public AppController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         protected IActionResult ApiOk()
         {
             return ApiOk(HttpStatusCode.OK, null);

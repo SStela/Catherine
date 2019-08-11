@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Catherine.Api.Services;
 using Catherine.Api.Services.Contracts;
 using Catherine.Model.DbContext;
@@ -32,14 +33,24 @@ namespace Catherine.Api
         {
 
             services.AddTransient<ICountryService, CountryService>();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Catherine.Api")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyAllowSpecificOrigins",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200");
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                });;
+                }); ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +66,7 @@ namespace Catherine.Api
                 app.UseHsts();
             }
 
+            app.UseCors("MyAllowSpecificOrigins");
             app.UseHttpsRedirection();
             app.UseMvc();
         }

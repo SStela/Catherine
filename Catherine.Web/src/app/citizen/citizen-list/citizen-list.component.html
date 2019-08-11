@@ -1,0 +1,25 @@
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Vat</th>
+            <th scope="col">Name</th>
+            <th scope="col">Citizenships</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Paycheck</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let citizen of citizens">
+            <td>{{ citizen.vatNumber }}</td>
+            <td>{{ citizen.fullName }}</td>
+            <td>{{ citizen.citizenshipList }}</td>
+            <td>{{ citizen.birthday }}</td>
+            <td>{{ citizen.paycheck }}</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

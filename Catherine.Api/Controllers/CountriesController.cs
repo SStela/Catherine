@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
+using AutoMapper;
 using Catherine.Api.Requests;
 using Catherine.Api.Responses;
 using Catherine.Api.Services.Contracts;
-using Catherine.Model.Countries;
 using Catherine.Shared.Pagination;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,8 +13,9 @@ namespace Catherine.Api.Controllers
         private readonly ICountryService Countries;
 
         public CountriesController(
+            IMapper mapper,
             ICountryService countries
-        ) {
+        ) : base(mapper) {
             Countries = countries;
         }
 

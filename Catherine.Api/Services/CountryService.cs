@@ -24,12 +24,13 @@ namespace Catherine.Api.Services
         
         public async Task<PagedResult<CountryResponse>> GetPageAsync(CountryPaginationRequest request)
         {
-            PagedResult<CountryResponse> pagedResult =
-                await _context.Countries.AsQueryable()
+            PagedResult<CountryResponse> pagedResult = await _context
+                .Countries.AsQueryable()
                 .Select(i => new CountryResponse
                 {
                     Id = i.Id,
-                    Name = i.Name
+                    Name = i.Name,
+                    CityCount = i.Cities.Count
                 })
                 .ToPagedResultAsync(request);
 
