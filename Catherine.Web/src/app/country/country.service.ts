@@ -25,6 +25,17 @@ export class CountryService {
       );
   }
 
+  public getOne(id) {
+    return this
+      .http
+      .get(environment.apiUrl + '/countries/' + id)
+      .pipe(
+        map((raw: ApiResponse<Country>) => {
+          return raw.response;
+        })
+      );
+  }
+
   public deleteOne(id) {
     return this
       .http

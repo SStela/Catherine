@@ -5,9 +5,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a [routerLink]="['/home']" class="nav-item nav-link">Home</a>
-      <a [routerLink]="['/citizens']" class="nav-item nav-link">Citizens</a>
-      <a [routerLink]="['/countries']" class="nav-item nav-link">Countries</a>
+      <a [routerLinkActive]="['active']" [routerLink]="['/citizens']" class="nav-item nav-link">Građani</a>
+      <a [routerLinkActive]="['active']" [routerLink]="['/countries']" class="nav-item nav-link">Države</a>
     </div>
   </div>
 </nav>

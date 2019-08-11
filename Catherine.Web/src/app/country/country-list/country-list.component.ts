@@ -3,6 +3,7 @@ import { CountryService } from '../country.service';
 import { Country } from '../country';
 import { Pagination } from 'src/app/shared/Response/Pagination';
 import { CommonService } from 'src/app/shared/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-list',
@@ -13,7 +14,8 @@ export class CountryListComponent implements OnInit {
 
   constructor(
     private common: CommonService,
-    private countryService: CountryService
+    private countryService: CountryService,
+    private router: Router
   ) { }
 
   public countries = Array<Country>();
@@ -24,11 +26,18 @@ export class CountryListComponent implements OnInit {
     this.getCountries();
   }
 
+  onEdit(id) {
+    this.router.navigate(['countries', id]);
+  }
+
   onDelete(id) {
-    if(!confirm('Jeste li sigurni?')) return;
+    if(!confirm('Jeste li sigurni? Ova će akcija obrisati i pripadajuće gradove.')) return;
     this.countryService
       .deleteOne(id)
-      .subscribe(_ => this.getCountries())
+      .subscribe(_ => {
+        this.getCountries();
+        this.common.success('Akcija uspješno izvršena!');
+      })
   }
 
   getCountries() {

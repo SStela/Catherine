@@ -1,7 +1,7 @@
-export interface Country {
+export class Country {
     id: number;
     name: string;
-    primeMinister: string;
-    cities: Array<any>;
+    primeMinister?: string;
+    cities?: Array<any>;
     cityCount: number;
 }
