@@ -25,6 +25,7 @@ export class CountryListComponent implements OnInit {
   }
 
   onDelete(id) {
+    if(!confirm('Jeste li sigurni?')) return;
     this.countryService
       .deleteOne(id)
       .subscribe(_ => this.getCountries())
