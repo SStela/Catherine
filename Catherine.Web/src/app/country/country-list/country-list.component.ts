@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from '../country.service';
 import { Country } from '../country';
-import { Pagination } from 'src/app/shared/Response/Pagination';
 import { CommonService } from 'src/app/shared/common.service';
 import { Router } from '@angular/router';
+import { Pagination } from 'src/app/shared/Response/Pagination';
 
 @Component({
   selector: 'app-country-list',

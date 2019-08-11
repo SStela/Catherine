@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Country } from './country';
 import { map } from 'rxjs/operators';
-import { ApiResponse } from '../shared/Response/ApiResponse';
+import { PaginationResponse } from '../shared/Response/PaginationResponse';
+import { DetailResponse } from '../shared/Response/DetailResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class CountryService {
       .http
       .get(environment.apiUrl + '/countries?page=' + page)
       .pipe(
-        map((raw: ApiResponse<Country>) => {
+        map((raw: PaginationResponse<Country>) => {
           return raw.response;
         })
       );
@@ -30,7 +31,7 @@ export class CountryService {
       .http
       .get(environment.apiUrl + '/countries/' + id)
       .pipe(
-        map((raw: ApiResponse<Country>) => {
+        map((raw: DetailResponse<Country>) => {
           return raw.response;
         })
       );

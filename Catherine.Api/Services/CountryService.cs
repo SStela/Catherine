@@ -6,8 +6,6 @@ using Catherine.Shared.Pagination;
 using System.Linq;
 using Catherine.Shared.Extensions;
 using Catherine.Api.Services.Contracts;
-using Catherine.Api.ApiResponse;
-using Catherine.Model.Countries;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catherine.Api.Services
